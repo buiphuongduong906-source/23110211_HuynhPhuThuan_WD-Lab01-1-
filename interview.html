@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phần 3 — Interview Questions</title>
+  </head>
+
+  <body>
+    <header id="top">
+      <h1>Phần 3 — Interview Questions</h1>
+      <p>Huỳnh Phú Thuận — MSSV: 23110211</p>
+
+      <nav>
+        <p>
+          <a href="index.html">Trang chủ</a> |
+          <a href="index.html#phan1">Phần 1 — Sáu bài HTML</a> |
+          <a href="portfolio.html">Phần 2 — Portfolio</a>
+        </p>
+
+        <p>
+          <a href="#theory">20 câu hỏi phỏng vấn</a> |
+          <a href="#code-interview">Bốn bài sửa code</a>
+        </p>
+      </nav>
+    </header>
+
+    <hr>
+
+    <main>
+      <section id="theory">
+        <h2>Hai mươi câu hỏi phỏng vấn</h2>
+
+        <ol>
+          <li>
+            <p><strong>Tag và element khác nhau như thế nào?</strong></p>
+            <p>
+              Tag là thẻ đánh dấu, chẳng hạn
+              <code>&lt;p&gt;</code> và <code>&lt;/p&gt;</code>.
+              Element là phần tử HTML.
+              Với phần tử có cặp thẻ, element gồm thẻ mở,
+              nội dung và thẻ đóng.
+            </p>
+            <p>
+              Ví dụ:
+              <code>&lt;p&gt;Xin chào&lt;/p&gt;</code>
+              là một paragraph element.
+            </p>
+          </li>
+
+          <li>
+            <p><strong>Vì sao cần DOCTYPE?</strong></p>
+            <p>
+              <code>&lt;!DOCTYPE html&gt;</code>
+              giúp trình duyệt sử dụng chế độ tiêu chuẩn,
+              tránh chế độ tương thích cũ.
+              Tôi đặt khai báo này ở đầu mỗi trang.
+            </p>
+          </li>
+
+          <li>
+            <p><strong>Head và body khác nhau như thế nào?</strong></p>
+            <p>
+              Head chứa thông tin về tài liệu như title,
+              charset và viewport.
+              Body chứa nội dung trang như tiêu đề,
+              đoạn văn, ảnh, bảng và form.
+            </p>
+          </li>
+
+          <li>
+            <p><strong>Charset UTF-8 khác lang như thế nào?</strong></p>
+            <p>
+              Charset khai báo cách giải mã ký tự.
+              Lang khai báo ngôn ngữ của nội dung.
+              Lang en là tiếng Anh; trong bài của tôi,
+              lang vi được dùng cho tiếng Việt.
+              Lang không thay thế charset và không tự dịch văn bản.
+            </p>
+          </li>
+
+          <li>
+            <p><strong>Vì sao cần meta viewport?</strong></p>
+            <p>
+              Thiết lập width=device-width, initial-scale=1.0
+              giúp trình duyệt di động sử dụng viewport
+              theo chiều rộng thiết bị với tỉ lệ ban đầu phù hợp.
+              Nó không tự tạo một bố cục responsive hoàn chỉnh.
+            </p>
+          </li>
+
+          <li>
+            <p><strong>Paired element và void element khác nhau thế nào?</strong></p>
+            <p>
+              Paired element có thẻ mở và thẻ đóng,
+              ví dụ p, section và a.
+              Void element không có nội dung con và không có thẻ đóng,
+              ví dụ img, br, hr, meta và input.
+              Vì vậy không viết thẻ đóng cho img.
+            </p>
+          </li>
+
+          <li>
+            <p><strong>Attribute nằm ở đâu? Các thuộc tính có ý nghĩa gì?</strong></p>
+            <p>
+              Attribute nằm trong thẻ mở.
+              Href chỉ đích liên kết; src chỉ nguồn tài nguyên;
+              alt là văn bản thay thế ảnh;
+              id là định danh duy nhất trong trang;
+              class dùng để nhóm các phần tử.
+            </p>
+          </li>
+
+          <li>
+            <p><strong>Parent, child, sibling và descendant là gì?</strong></p>
+            <p>
+              Parent là phần tử cha trực tiếp.
+              Child là phần tử con trực tiếp.
+              Siblings là các phần tử có cùng cha.
+              Descendant là phần tử nằm bên trong một phần tử khác
+              ở bất kỳ độ sâu nào.
+            </p>
+            <p>
+              Trong Bài 5, img và figcaption là các con của figure
+              và là siblings của nhau.
+              Cả hai cũng là descendants của article.
+            </p>
+          </li>
+
+          <li>
+            <p><strong>Vì sao phải đóng thẻ từ trong ra ngoài?</strong></p>
+            <p>
+              Cách đóng này giữ đúng quan hệ lồng nhau.
+              Thẻ được mở sau ở bên trong phải được đóng trước.
+            </p>
+            <p>
+              Đúng:
+              <code>&lt;p&gt;Học &lt;strong&gt;HTML&lt;/strong&gt;&lt;/p&gt;</code>.
+            </p>
+            <p>
+              Sai:
+              <code>&lt;p&gt;Học &lt;strong&gt;HTML&lt;/p&gt;&lt;/strong&gt;</code>.
+            </p>
+          </li>
+
+          <li>
+            <p><strong>Khi nào dùng p, br và hr?</strong></p>
+            <p>
+              P tạo một đoạn văn.
+              Br ngắt dòng trong cùng một nội dung,
+              ví dụ các dòng thơ ở Bài 4.
+              Hr đánh dấu sự chuyển chủ đề.
+              Không dùng nhiều br chỉ để tạo khoảng trống bố cục.
+            </p>
+          </li>
+
+          <li>
+            <p><strong>Vì sao không nhảy từ h1 xuống h3 để chữ nhỏ hơn?</strong></p>
+            <p>
+              Heading thể hiện cấp độ nội dung.
+              Bỏ qua h2 chỉ vì muốn chữ nhỏ hơn
+              làm cấu trúc nội dung khó hiểu.
+              Trong Portfolio, tôi dùng h1 cho trang,
+              h2 cho các section và h3 cho từng dự án.
+            </p>
+          </li>
+
+          <li>
+            <p><strong>External, relative và fragment link khác nhau thế nào?</strong></p>
+            <p>
+              External link dẫn ra ngoài website,
+              ví dụ https://github.com/.
+              Relative link dùng đường dẫn dựa vào trang hiện tại,
+              ví dụ index.html.
+              Fragment link như #projects
+              dẫn đến phần tử có id projects trong trang.
+            </p>
+            <p>
+              Đường dẫn cũng có thể kết hợp file và fragment,
+              ví dụ index.html#phan1.
+            </p>
+          </li>
+
+          <li>
+            <p><strong>Alt khác figcaption như thế nào?</strong></p>
+            <p>
+              Alt là văn bản thay thế ảnh, phục vụ công cụ hỗ trợ
+              và tình huống ảnh không tải được.
+              Figcaption là chú thích hiển thị đi kèm figure.
+              Có figcaption không có nghĩa là được bỏ alt
+              của một ảnh mang nội dung.
+            </p>
+          </li>
+
+          <li>
+            <p><strong>Semantic HTML là gì?</strong></p>
+            <p>
+              Semantic HTML là sử dụng thẻ đúng ý nghĩa nội dung.
+              Header chỉ phần mở đầu, nav chỉ điều hướng,
+              main chỉ nội dung chính, section nhóm chủ đề,
+              article chứa nội dung tương đối độc lập
+              và footer chỉ phần cuối.
+            </p>
+            <p>
+              Các thẻ này giúp người đọc code và công cụ hỗ trợ
+              hiểu vai trò của từng vùng tốt hơn
+              việc dùng div cho tất cả nội dung.
+            </p>
+          </li>
+
+          <li>
+            <p><strong>Hierarchy đúng của table là gì?</strong></p>
+            <p>
+              Trong bảng học tập, table chứa thead và tbody.
+              Thead và tbody chứa các tr.
+              Mỗi tr chứa th hoặc td.
+              Th là ô tiêu đề, còn td là ô dữ liệu.
+              Caption nếu có là phần tử con trực tiếp của table.
+            </p>
+          </li>
+
+          <li>
+            <p><strong>Label for liên kết với input id như thế nào?</strong></p>
+            <p>
+              Giá trị for phải khớp với id của input.
+              Trong Portfolio, for contact-email khớp
+              với id contact-email.
+              Bấm nhãn Email sẽ đưa tiêu điểm vào ô email.
+              Name không thay thế quan hệ này.
+            </p>
+          </li>
+
+          <li>
+            <p><strong>Vì sao form chưa gửi hoặc lưu thông tin?</strong></p>
+            <p>
+              Bài thực hành mới xây dựng các trường nhập liệu,
+              chưa có hệ thống tiếp nhận và lưu dữ liệu.
+              Trong Portfolio, nút gửi còn được đặt type button
+              và disabled nên không thực hiện submit.
+            </p>
+            <p>
+              HTML có thể gửi form mà không cần JavaScript,
+              nhưng việc tiếp nhận và xử lý dữ liệu
+              phải được thiết lập riêng.
+            </p>
+          </li>
+
+          <li>
+            <p><strong>Vì sao trình duyệt vẫn hiển thị được HTML sai?</strong></p>
+            <p>
+              Trình duyệt có cơ chế phục hồi lỗi khi phân tích HTML,
+              nên có thể tự điều chỉnh một số cấu trúc để dựng DOM.
+              Trang nhìn đúng chưa chứng minh source đúng.
+            </p>
+            <p>
+              Tôi cần kiểm tra nesting, heading, id duy nhất,
+              đường dẫn ảnh, liên kết, alt và quan hệ label với input.
+            </p>
+          </li>
+
+          <li>
+            <p><strong>XAMPP, Apache và localhost có vai trò gì?</strong></p>
+            <p>
+              XAMPP cung cấp môi trường máy chủ cục bộ.
+              Apache phục vụ các file của website qua HTTP.
+              Localhost chỉ chính máy đang sử dụng.
+              Trong bài này, tôi đặt project trong htdocs
+              và truy cập website bằng địa chỉ localhost.
+            </p>
+          </li>
+
+          <li>
+            <p><strong>Git add, commit, pull và push khác nhau thế nào?</strong></p>
+            <p>
+              Git add đưa các thay đổi được chọn vào staging.
+              Git commit ghi một phiên bản vào lịch sử local.
+              Git pull lấy và tích hợp thay đổi từ repository từ xa.
+              Git push đưa các commit local lên repository từ xa.
+            </p>
+            <p>
+              Lưu file trong VS Code không thay thế
+              thao tác commit hoặc push.
+            </p>
+          </li>
+        </ol>
+      </section>
+
+      <hr>
+
+      <section id="code-interview">
+        <h2>Code Interview Mini-Questions</h2>
+
+        <article>
+          <h3>A — Sửa lỗi nesting</h3>
+
+          <pre><code>&lt;p&gt;Learning &lt;strong&gt;HTML&lt;/strong&gt;&lt;/p&gt;</code></pre>
+
+          <p>
+            Strong được mở sau p nên phải đóng trước p.
+            Đây là nguyên tắc Last In, First Out:
+            vào sau, ra trước.
+          </p>
+        </article>
+
+        <hr>
+
+        <article>
+          <h3>B — Bổ sung alt và dấu ngoặc kép</h3>
+
+          <pre><code>&lt;img src="images/product.png" alt="Ảnh minh họa sản phẩm"&gt;
+&lt;a href="#products"&gt;Products&lt;/a&gt;</code></pre>
+
+          <p>
+            Bổ sung alt để có văn bản thay thế ảnh.
+            Nội dung alt cần mô tả đúng sản phẩm trong ảnh.
+            Đặt giá trị href trong dấu ngoặc kép
+            để tuân thủ quy ước trình bày của bài.
+          </p>
+
+          <p>
+            Giá trị không có dấu ngoặc kép như href=#products
+            có thể vẫn hợp lệ trong trường hợp này,
+            nhưng chưa đúng quy ước của đề.
+            Khi sử dụng thực tế, ảnh product.png
+            và phần tử có id products phải tồn tại.
+          </p>
+        </article>
+
+        <hr>
+
+        <article>
+          <h3>C — Sửa quan hệ giữa label và input</h3>
+
+          <pre><code>&lt;label for="student-email"&gt;Email&lt;/label&gt;
+&lt;input id="student-email" name="email" type="email"&gt;</code></pre>
+
+          <p>
+            Đoạn ban đầu chưa liên kết đúng vì for là email,
+            còn id là student-email.
+            Sửa for thành student-email để hai giá trị khớp nhau.
+            Name vẫn có thể là email vì đây là tên trường dữ liệu.
+          </p>
+        </article>
+
+        <hr>
+
+        <article>
+          <h3>D — Sửa fragment link</h3>
+
+          <pre><code>&lt;a href="#projects"&gt;Projects&lt;/a&gt;
+
+&lt;section id="projects"&gt;
+  &lt;h2&gt;Projects&lt;/h2&gt;
+&lt;/section&gt;</code></pre>
+
+          <p>
+            Đoạn ban đầu dùng href #projects nhưng section
+            có id project nên đích liên kết không khớp.
+            Sửa id thành projects.
+            Mỗi id phải duy nhất trong tài liệu.
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <hr>
+
+    <footer>
+      <p>Huỳnh Phú Thuận — MSSV: 23110211 — WD-Lab01</p>
+      <p>
+        <a href="#top">Về đầu trang</a> |
+        <a href="index.html">Về trang chủ</a>
+      </p>
+    </footer>
+  </body>
+</html>
